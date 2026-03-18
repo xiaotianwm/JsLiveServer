@@ -16,6 +16,7 @@
 #include <atomic>
 #include <chrono>
 #include <cctype>
+#include <cstring>
 #include <cstdio>
 #include <ctime>
 #include <deque>
@@ -49,6 +50,7 @@ bool NeedsQuotes(const std::string& value) {
     return value.empty() || value.find_first_of(" \t\n\v\"") != std::string::npos;
 }
 
+#ifdef _WIN32
 std::string QuoteWindowsArg(const std::string& value) {
     if (!NeedsQuotes(value)) {
         return value;
@@ -90,6 +92,7 @@ std::string JoinCommandLine(const std::vector<std::string>& args) {
     }
     return out.str();
 }
+#endif
 
 std::string LastProcessError(const std::string& prefix) {
 #ifdef _WIN32
