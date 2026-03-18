@@ -1,0 +1,17 @@
+native/server/build/
+native/server/data/
+native/server/tmp_probe/
+native/server/tmp_probe_file/
+native/server/tmp_probe_managed/
+native/server/tmp_probe_managed_tcp/
+
+*.log
+*.out
+*.err
+*.pid
+*.db
+*.sqlite
+*.sqlite3
+
+.DS_Store
+Thumbs.db
